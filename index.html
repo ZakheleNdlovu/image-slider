@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image-Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1 id="title">Image Slider</h1>
+    </div>
+    <div class="frame">
+        <br> 
+        <button id="prev">◁</button>
+        <br><br>
+        <div class="images">
+            
+            <img src="images/basket.jpg" alt="Image1" class="Image">
+            <img src="images/logo.jpg" alt="Image2" class="Image">
+            <img src="images/luffy.jpg" alt="Image3" class="Image">
+            <img src="images/steph.jpg" alt="Steph" class="Image">
+            <img src="images/luffy1.jpg" alt="luffy" class="Image">
+            <img src="images/dirk.jpg" alt="Dirk Nowitzki - Dallas Mavericks" class="Image">
+            
+        </div>
+        <button id="next">▷</button>
+    </div>
+
+    <script>
+        let img1 = document.getElementById("Image1");
+        let img2 = document.getElementById("Image2");
+        let img3 = document.getElementById("Image3");
+        let next = document.getElementById("next");
+        let prev = document.getElementById("prev");
+
+
+        document.addEventListener("DOMContentLoaded",showImage)
+
+        let images = document.querySelectorAll(".images img");
+        let s_index = 0;
+
+        function showImage(){
+            images[s_index].style.display = "flex";
+        }
+
+        next.addEventListener("click",()=>{
+            
+            if (s_index >= images.length - 1){
+                images[images.length - 1].style.display = "none";
+                images[0].style.display = "flex";
+                s_index = 0;
+                
+            }
+            else if (s_index >= 0 && s_index < images.length){
+                images[s_index].style.display = "none";
+                s_index += 1;
+                images[s_index].style.display = "flex";
+            }
+            else if (s_index <= 0){
+                s_index = 0;
+            }
+            
+        })
+
+        prev.addEventListener("click",()=>{
+            if (s_index <= 0){
+                images[0].style.display = "none";
+                images[images.length -1].style.display = "flex";
+                s_index = images.length - 1;
+                
+            }
+            else if (s_index >= 0 && s_index < images.length ){
+                images[s_index].style.display = "none";
+                s_index -= 1;
+                images[s_index].style.display = "flex";
+            }
+            else if (s_index > images.length - 1){
+                s_index = 0;
+            }
+        })
+
+    </script>
+</body>
+</html>

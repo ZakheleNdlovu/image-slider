@@ -1,0 +1,58 @@
+body{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(168, 181, 192);
+
+    #title{
+        font-family: 'Courier New', Courier, monospace;    
+    }
+
+    .frame{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 730px;
+        height: 360px;
+        position: relative;
+
+        
+        .Image{
+            width: 630px;
+            height: 350px;
+            display: none;
+            border-radius: 10px;
+            border: 2px solid black;
+            box-shadow: 5px 5px 9px black;
+        }
+        
+        #prev{
+            background-color: transparent;
+            font-size: 40px;
+            height: 50px;
+            border: transparent;
+            
+        }
+        #prev:hover{
+            transform: scale(1.1);
+            box-shadow: 1px 1px 6px black;
+            border-radius: 15%;
+            color: red;
+        }
+        #next{
+            background-color: transparent;
+            font-size: 40px;
+            height: 50px;
+            border: transparent;
+        }
+        #next:hover{
+            transform: scale(1.1);
+            box-shadow: 1px 1px 6px black;
+            border-radius: 15%;
+            color: red;
+        }
+    }
+}
